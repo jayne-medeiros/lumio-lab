@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lumiô Lab (modelo AgroApp)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #132A13;
+      --primary-dark: #132A13;
+      --muted: #132A13;
+      --light: #fff;
+      --card: #132A13;
+      --accent: #ECF39E;
+    }
+    body {
+      background: #132A13;
+      color: #fff; 
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    /* TOPO E MENU */
+    header {
+      background: var(--primary-dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 32px 15px 32px;
+      box-shadow: 0 2px 16px #1a35240d;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+    }
+    .logo-area img {
+      height: 42px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #253d2c22;
+      display: block;
+    }
+    nav {
+      display: flex; gap: 30px;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.07em;
+      padding: 7px 2px 4px 2px;
+      letter-spacing: .05em;
+      position: relative;
+      background: linear-gradient(90deg,#ECF39E,#90A955 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      transition: background .2s, color .17s;
+    }
+    nav a:hover,
+    nav a.active {
+      background: linear-gradient(90deg,#90A955,#ECF39E 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+      transition: width 0.25s;
+      position: relative;
+      left: 0;
+      bottom: 1px;
+    }
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    @media (max-width:900px) {
+      header { flex-direction:column; gap:3px; padding:12px 4vw 9px 4vw;}
+      nav { gap:16px; flex-wrap: wrap;}
+      .logo-area { justify-content: center; width: 100%; margin-bottom: 7px;}
+    }
+    /* HERO */
+    .hero {
+      background: linear-gradient(90deg, #4F772D 0%, #90A955 100%);
+      padding: 56px 0 46px 0;
+      overflow: hidden;
+    }
+    .hero .container.row {
+      display: flex; justify-content: space-between; align-items: center; gap: 30px;
+      flex-wrap: wrap;
+    }
+    .hero h1 {
+      font-size: 2.25em; font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.13em;
+      text-shadow: 0 2px 14px rgba(255, 255, 255, 0.1);
+    }
+    .hero p {
+      color: #fff; font-size: 1.18em; margin-bottom: 0; letter-spacing: .01em;
+    }
+    .placeholder { min-width: 300px; min-height: 180px; background: #fff; border-radius: 14px;}
+    @media (max-width: 700px) {
+      .hero .container.row {flex-direction:column-reverse; gap:19px;}
+      .placeholder {min-width:160px; min-height:70px;}
+      .hero {padding: 23px 0 9px 0;}
+      .hero h1 {font-size: 1.24em;}
+    }
+    .container {
+      max-width: 1200px; margin: 0 auto; padding: 0 4vw;
+    }
+    /* GRID, SECTIONS */
+    .section {padding:48px 0 32px 0;}
+    .section.alt {background: linear-gradient(120deg, #90A955 0%, #4F772D 100%);}
+    .section h2 {font-size:2em;color:var(--primary-dark);font-weight:850;margin-bottom:20px;}
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+    .cols-2 {grid-template-columns: repeat(2, minmax(0,1fr));}
+    .cols-3 {grid-template-columns: repeat(3, minmax(0,1fr));}
+    .cols-4 {grid-template-columns: repeat(4, minmax(0,1fr));}
+    @media (max-width: 950px) {
+      .cols-4 { grid-template-columns: repeat(2, 1fr);}
+      .cols-3 { grid-template-columns: 1fr;}
+      .cols-2 { grid-template-columns: 1fr;}
+    }
+    .section {
+  padding: 48px 0 32px 0;
+  background: #fff;  /* ou qualquer cor ou gradiente que você quiser */
+   }
+    .card {
+      background: linear-gradient(150deg, #4F772D 0%, #90A955 100%);
+      border-radius: 18px;
+      box-shadow: 0 2px 14px #0756380d;
+      padding: 30px 24px 20px 24px;
+      display: flex; flex-direction: column; align-items: center; justify-content: start;
+      text-align: center;
+      gap: 10px;
+      min-height: 170px;
+    }
+    .card img { margin-bottom: 12px;}
+    .chip {
+      display: inline-block; width:12px;height:12px;
+      border-radius: 5px; background: var(--primary);
+    }
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, #285930 0%, #90A955 100%);
+      color: #fff;
+      font-size:1.036em;
+      margin-top:42px;
+    }
+
+    footer * { color: #fff !important; }
+    
+    footer .brand {
+      font-size:1.2em; font-weight:900;margin-bottom:8px;
+      letter-spacing:.04em;
+    }
+    footer a {color:#fff;text-decoration:none;}
+    footer a:hover {text-decoration:underline;}
+    footer .grid {gap: 30px;}
+    footer .grid > div > div[style*="font-weight:600"] { color: #fff;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="img/logo.png" alt="Logo Lumiô Lab"/>
+  </div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="agrolideres.html">AgroLíderes</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="download.html">Download</a>
+    <a href="https://agroapp.com.br/#contato">Fale Conosco</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container row">
+      <div style="text-align: center; width: 100%;">
+        <h1>Soluções Digitais para o Agro, adaptadas ao Seridó</h1>
+        <p>Uma plataforma feita para o produtor rural que valoriza simplicidade, conteúdo acessível e resultados que fazem sentido aqui na nossa terra. Use onde quiser, até offline — gratuito, direto e pensado para transformar o campo.</p>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <!-- PRINCIPAIS RECURSOS -->
+  <section id="recursos" class="section">
+    <div class="container">
+      <h2 style="text-align: center;">Principais Recursos</h2>
+      <div class="grid cols-4" style="margin-top:20px">
+        <article class="card">
+          <img src="https://agroapp.com.br/wp-content/uploads/2022/07/comunidade_icone-copy.png" alt="" width="48" height="48" />
+          <h3>Pensado para o campo, em qualquer lugar</h3>
+          <p>Disponível até mesmo sem internet. Sua decisão agro, na palma da mão – totalmente offline.</p>
+        </article>
+        <article class="card">
+          <img src="https://img.icons8.com/ios-filled/64/ffffff/groups.png" alt="" width="48" height="48" />
+          <h3>Inclusão para todos os produtores</h3>
+          <p>Interface simples e acessível para quem pouco lê ou nunca mexeu num smartphone.</p>
+        </article>
+        <article class="card">
+          <img src="https://agroapp.com.br/wp-content/uploads/2022/07/culturas_icone-copy.png" alt="" width="48" height="48" />
+          <h3>Foco total no Seridó</h3>
+          <p>Feito para as culturas, desafios e necessidades reais da nossa região.</p>
+        </article>
+        <article class="card">
+          <img src="https://agroapp.com.br/wp-content/uploads/2022/07/plantas_daninhas_icone-copy.png" alt="" width="48" height="48" />
+          <h3>Sustentabilidade e tradição</h3>
+          <p>Aliando tecnologia e conhecimento local para garantir produção, lucro e futuro sustentável.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURAS/EXTRAS -->
+  <section class="section alt">
+    <div class="container grid cols-2" style="align-items:center;gap:40px">
+      <div>
+        <h2 style="color:#fff;">Tecnologia, solução e orientação</h2>
+        <p style="color:#fff;margin-top:10px;max-width:56ch">Explore informações personalizadas para cada etapa da produção. Navegue, tire dúvidas e leve sua lavoura a um novo patamar.</p>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <!-- AGROLÍDERES -->
+  <section id="agrolideres" class="section">
+    <div class="container grid cols-2" style="align-items:center;gap:40px">
+      <div>
+        <h2>Conheça a comunidade de AgroLíderes</h2>
+        <p style="color:var(--muted);margin-top:10px;max-width:56ch">O futuro do agro passa pela juventude: conheça casos, projetos e histórias inspiradoras dessa geração protagonista.</p>
+      </div>
+      <div class="card" style="font-size:14px;color:var(--muted);"></div>
+    </div>
+  </section>
+
+  <style>
+#sobre.section {
+  background: linear-gradient(120deg, #90A955 0%, #285930 100%);
+}
+</style>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section">
+    <div class="container" style="text-align:center">
+      <h2 style="color:#fff;">Interface pioneira para baixa escolaridade no agronegócio brasileiro</h2>
+      <p style="color:#fff;margin:10px auto 0;max-width:64ch">Soluções inclusivas, pensadas para facilitar o acesso à informação e à tecnologia no campo, valorizando quem mais precisa de simplicidade e eficiência.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="padding:40px 0">
+    <div class="grid cols-3 footer-grid">
+      <div>
+        <div class="brand">Lumiô Lab</div>
+        <p style="color:var(--muted);font-size:14px;max-width:40ch">O Super Aplicativo do Agro. Informações confiáveis para o campo.</p>
+      </div>
+      <div>
+        <div style="font-weight:600;margin-bottom:10px;text-align:center">Navegação</div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap:8px; font-size:14px;">
+          <a href="#agrolideres">AgroLíderes</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#download">Download</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600;margin-bottom:10px;text-align:center">Contato</div>
+        <p style="font-size:14px;text-align:center;">
+          assisiagro@gmail.com<br>+55 (84) 98871-8187
+        </p>
+      </div>
+    </div>
+    <div style="border-top:1px solid #fff;margin-top:20px;padding-top:12px;text-align:center;color:#fff;font-size:12px">
+      © <span id="year"></span> Lumiô Lab. Todos os direitos reservados.
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear().toString();
+  </script>
+</footer>
+
+
+</body>
+</html>

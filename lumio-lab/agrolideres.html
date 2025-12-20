@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>AgroLíderes CNA Jovem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #132A13;
+      --accent: #90A955;
+      --muted: #253d2c;
+      --light: #fff;
+    }
+    body {
+      background: var(--primary);
+      color: var(--light); 
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 32px 15px 32px;
+      box-shadow: 0 2px 16px #1a35240d;
+      position: sticky;
+      top: 0; z-index: 10;
+    }
+    .logo-area {
+      display: flex; align-items: center;
+    }
+    .logo-area img { height: 42px; border-radius: 8px; box-shadow: 0 2px 8px #253d2c22; }
+    nav {
+      display: flex; gap: 30px;
+    }
+    nav a {
+      text-decoration: none; font-weight: 700; font-size: 1.07em; padding: 7px 2px 4px 2px;
+      letter-spacing: .05em; position: relative;
+      background: linear-gradient(90deg,#ECF39E,#90A955 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; color: transparent;
+    }
+    nav a:hover,nav a.active {
+      background: linear-gradient(90deg,#90A955,#ECF39E 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; color: transparent;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+      transition: width 0.25s;
+      position: relative;
+      left: 0;
+      bottom: 1px;
+    }
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    @media (max-width:900px) {
+      header { flex-direction:column; gap:3px; padding:12px 4vw 9px 4vw;}
+      nav { gap:16px; flex-wrap: wrap;}
+      .logo-area { justify-content: center; width: 100%; margin-bottom: 7px;}
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 4vw; }
+    .section { padding:48px 0 32px 0; }
+    .section.alt { background: linear-gradient(120deg, #90A955 0%, #4F772D 100%);}
+    .section h2 {font-size:2em; color:var(--accent); font-weight:850; margin-bottom:18px;}
+    /* --- Centralize o título só do formulário --- */
+    #envie.section.alt h2 { color: #fff; text-align: center; }
+    .grid {
+      display: grid; gap: 22px;
+    }
+    .cols-2 {grid-template-columns: repeat(2, minmax(0,1fr));}
+    .cols-3 {grid-template-columns: repeat(3, minmax(0,1fr));}
+    .card { background: #fff; color: #1e2924; border-radius: 18px; padding: 30px 24px 20px 24px; text-align: center; gap: 10px; min-height: 170px; box-shadow: 0 2px 14px #0756380d; }
+    .card h3 { margin-top:8px; }
+    .initiative-list .initiative-card { background: #fff; color: #132A13; border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 10px #07563818; }
+    /* --- Centralização do formulário --- */
+    #envie .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #initiative-form {
+      margin: 0 auto;
+      max-width: 440px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      color: #132A13;
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    #initiative-form label {
+      width: 100%;
+      text-align: left;
+      margin-top: 14px;
+      font-weight: 700;
+    }
+    #initiative-form input,
+    #initiative-form textarea {
+      width: 90%; /* campos ficam centralizados e não encostam nas bordas */
+      padding: 8px;
+      margin-top: 3px;
+      border-radius: 6px;
+      border: 1px solid #b2c8a4;
+      font-size: 1em;
+      box-sizing: border-box;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #initiative-form button {
+      margin-top: 18px;
+      background: #90A955;
+      color: #132A13;
+      font-weight: 700;
+      border-radius: 7px;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #initiative-form button:hover {
+      background: #4F772D;
+      color: #fff;
+    }
+    /* Footer padrão opcional */
+    footer { background: linear-gradient(135deg, #285930 0%, #90A955 100%); color: #fff; font-size:1.036em; margin-top:42px;}
+    footer .container { padding: 38px 0;}
+    footer .grid > div { display: flex; flex-direction: column; align-items: center; text-align:center;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="img/logo.png" alt="Logo Lumiô Lab"/>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="agrolideres.html" class="active">AgroLíderes</a>
+    <a href="#iniciativas">Iniciativas</a>
+    <a href="#envie">Envie a sua</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO/Apresentação -->
+  <section id="hero" class="hero section alt">
+    <div class="container">
+      <h1>AgroLíderes CNA Jovem</h1>
+      <p>
+        Espaço dedicado às ações, projetos e ideias dos participantes da <strong>6ª edição do CNA Jovem</strong>. Veja como jovens estão transformando o agro através de iniciativas inovadoras e inspiradoras!
+      </p>
+    </div>
+  </section>
+
+  <!-- Iniciativas em Destaque -->
+  <section id="iniciativas" class="section">
+    <div class="container">
+      <h2>Iniciativas dos colegas CNA Jovem</h2>
+      <div class="grid cols-2 initiative-list">
+        <!-- Exemplo de iniciativas. Troque pelos reais! -->
+        <div class="initiative-card">
+          <h3>Soluções Digitais para Gestão Rural</h3>
+          <p>
+            Plataforma que simplifica o controle de insumos e produção para pequenos produtores do Seridó.<br>
+            <small><em>Por: Maria Silva</em></small>
+          </p>
+        </div>
+        <div class="initiative-card">
+          <h3>Educação agro para jovens do campo</h3>
+          <p>
+            Oficinas regionais promovendo inclusão digital e capacitação para adolescentes rurais.<br>
+            <small><em>Por: João Souza</em></small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário de submissão -->
+  <section id="envie" class="section alt">
+    <div class="container">
+      <h2>Envie sua iniciativa</h2>
+      <form id="initiative-form">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="titulo">Título da iniciativa</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+        <label for="email">Email para contato</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Enviar iniciativa</button>
+      </form>
+      <div id="mensagem"></div>
+    </div>
+  </section>
+
+  <!-- Contato (opcional) -->
+  <section id="contato" class="section">
+    <div class="container" style="text-align: center;">
+      <h2>Fale com a equipe</h2>
+      <p>Envie dúvidas, sugestões ou peça apoio para divulgar sua iniciativa.<br>
+      Email: assisiagro@gmail.com&nbsp;|&nbsp;WhatsApp: +55 (84) 98871-8187</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="text-align:center;font-size:13px;margin-bottom:10px">
+      © <span id="year"></span> Lumiô Lab. Todos os direitos reservados.
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear().toString();
+  </script>
+</footer>
+
+</body>
+</html>

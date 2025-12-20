@@ -1,0 +1,16 @@
+{
+  "name": "Assis IAgro",
+  "short_name": "IAgro",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#188039",
+  "theme_color": "#188039",
+  "description": "Consultor agropecuário virtual. FAQ, fotos, cálculo de ração — offline!",
+  "icons": [
+    {
+      "src": "/img/icone.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

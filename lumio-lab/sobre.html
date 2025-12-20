@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre - Lumiô Lab & CNA Jovem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #132A13;
+      --accent: #90A955;
+      --light: #fff;
+    }
+    body {
+      background: var(--primary);
+      color: var(--light);
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 32px 15px 32px;
+      box-shadow: 0 2px 16px #1a35240d;
+      position: sticky;
+      top: 0; z-index: 10;
+    }
+    .logo-area {
+      display: flex; align-items: center;
+    }
+    .logo-area img { height: 42px; border-radius: 8px; box-shadow: 0 2px 8px #253d2c22; }
+    nav {
+      display: flex; gap: 30px;
+    }
+    nav a {
+      text-decoration: none; font-weight: 700; font-size: 1.07em; padding: 7px 2px 4px 2px;
+      letter-spacing: .05em; position: relative;
+      background: linear-gradient(90deg,#ECF39E,#90A955 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; color: transparent;
+    }
+    nav a:hover,nav a.active {
+      background: linear-gradient(90deg,#90A955,#ECF39E 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; color: transparent;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+      transition: width 0.25s;
+      position: relative;
+      left: 0;
+      bottom: 1px;
+    }
+    nav a:hover::after, nav a.active::after { width: 100%; }
+    @media (max-width:900px) {
+      header { flex-direction:column; gap:3px; padding:12px 4vw 9px 4vw;}
+      nav { gap:16px; flex-wrap: wrap;}
+      .logo-area { justify-content: center; width: 100%; margin-bottom: 7px;}
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 4vw; }
+    .section { padding:52px 0 34px 0; }
+    .section.alt { background: linear-gradient(120deg, #90A955 0%, #4F772D 100%);}
+    .section h2 {font-size:2em; color:var(--accent); font-weight:850; margin-bottom:14px;}
+    .section h3 {margin-top:32px;color:#ececec;}
+    .important { color: #ECF39E; font-weight: bold; }
+    ul { margin-bottom: 14px;}
+    footer { background: linear-gradient(135deg, #285930 0%, #90A955 100%); color: #fff; font-size:1.036em; margin-top:42px;}
+    footer .container { padding: 38px 0;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="img/logo.png" alt="Logo Lumiô Lab"/>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="agrolideres.html">AgroLíderes</a>
+    <a href="sobre.html" class="active">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <!-- PROPÓSITO -->
+  <section class="section">
+    <div class="container">
+      <h2>Minha Jornada e o Lumiô Lab</h2>
+      <p>
+        Meu nome é <span class="important">[Seu Nome]</span> e esta é a história do <strong>Lumiô Lab</strong>, um laboratório de soluções digitais focado em criar tecnologia de impacto para o campo do Seridó Potiguar e do Nordeste. Como participante da <strong>6ª edição do CNA Jovem</strong> — programa nacional de formação de lideranças do agro — encontrei inspiração para transformar as dificuldades e desafios vividos pelos produtores da nossa região em inovação, inclusão e resultado prático.
+      </p>
+    </div>
+  </section>
+
+  <!-- O QUE É O CNA JOVEM E O LABORATÓRIO -->
+  <section class="section alt">
+    <div class="container">
+        <h2 style="color: #fff;">CNA Jovem e a força da inovação colaborativa</h2>
+      <p>
+        O <b>CNA Jovem</b> é uma iniciativa da Confederação da Agricultura e Pecuária do Brasil que prepara e conecta jovens de todos os estados para desenvolver liderança, identificar desafios e criar soluções reais para o Agro. O programa apoia projetos que promovem educação, gestão, sustentabilidade e tecnologia, reconhecendo o potencial de cada jovem como agente de transformação.
+      </p>
+      <p>
+        O <strong>Lumiô Lab</strong> nasce desse ambiente de colaboração e criatividade, reunindo jovens, profissionais e produtores para cocriar soluções digitais sob medida para a realidade do campo, especialmente onde o acesso à informação e à tecnologia ainda é desafio.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROBLEMA REGIONAL -->
+  <section class="section">
+    <div class="container">
+      <h2>Por que nasceu o Lumiô Lab?</h2>
+      <h3>Os principais desafios do Agro no Seridó</h3>
+      <ul>
+        <li>Conectividade muito limitada em zonas rurais</li>
+        <li>Baixa escolaridade de parte dos produtores</li>
+        <li>Dificuldade em acessar informações técnicas atuais</li>
+        <li><b>Necessidade de diversificação nas culturas</b></li>
+        <li>Problemas de comercialização e visibilidade dos produtos locais</li>
+      </ul>
+      <p>
+        Estes desafios inspiraram o desenvolvimento de um laboratório que atua criando diferentes ferramentas digitais acessíveis, funcionais e conectadas com nossa cultura e formas de trabalhar.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOLUÇÃO INOVADORA -->
+  <section class="section alt">
+    <div class="container">
+        <h2 style="color: #fff;">O que fazemos no Lumiô Lab?</h2>
+      <ul>
+        <li><b>Aplicativos 100% offline:</b> Soluções que funcionam sem internet, levando informações e ferramentas para onde a rede não chega.</li>
+        <li><b>Interfaces ultra acessíveis:</b> Foco total em inclusão, navegabilidade intuitiva, comandos de voz, visual amigável e modos pensados para quem tem pouca escolaridade.</li>
+        <li><b>Conteúdo regional:</b> Aplicativos e materiais dedicados às culturas, desafios e linguagens do Semiárido e do Agro familiar.</li>
+        <li><b>Inovação aberta:</b> Desenvolvimento de diferentes soluções digitais para gestão de safras, organização financeira, diagnóstico de pragas, trocas e vendas locais, entre outros.</li>
+        <li><b>Rede de colaboração:</b> Espaços digitais para troca de saberes, experiências e apoio mútuo entre jovens do agro e agricultores experientes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- IMPACTO ESPERADO -->
+  <section class="section">
+    <div class="container">
+      <h2>O Impacto que buscamos</h2>
+      <ul>
+        <li>Ampliar a inclusão digital e o acesso à tecnologia para produtores familiares</li>
+        <li>Facilitar decisões técnicas e de gestão com soluções fáceis e práticas</li>
+        <li>Fortalecer a autonomia e a troca de conhecimento no campo regional</li>
+        <li>Inspirar o surgimento de outras iniciativas digitais onde a demanda for real</li>
+      </ul>
+      <p>
+        O <b>Lumiô Lab</b> é fruto do compromisso jovem com o futuro do Agro brasileiro: <span class="important">soluções digitais criadas POR e PARA quem faz o campo acontecer</span>.
+      </p>
+    </div>
+  </section>
+
+  <section id="contato" class="section alt">
+    <div class="container" style="text-align:center">
+        <h2 style="color: #fff;">Contato</h2
+      <p>Quer saber mais, participar, sugerir desafios ou apoiar? <br>
+        Envie um e-mail para <b>assisiagro@gmail.com</b> ou WhatsApp: <b>+55 (84) 98871-8187</b>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="text-align:center;font-size:13px;margin-bottom:10px">
+      © <span id="year"></span> Lumiô Lab. Todos os direitos reservados.
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear().toString();
+  </script>
+</footer>
+
+</body>
+</html>

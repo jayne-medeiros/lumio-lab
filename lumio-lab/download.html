@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Download de Apps - Lumiô Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { background: #132A13; color: #fff; font-family: 'Inter', Arial, sans-serif; margin: 0; }
+    header { background: #132A13; padding:19px 32px 15px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .logo-area img { height: 42px; border-radius: 8px; }
+    nav { display: flex; gap: 30px; }
+    nav a { text-decoration: none; font-weight: 700; font-size: 1.07em; color: #90A955; }
+    nav a.active { color: #ECF39E; }
+    main { min-height: 80vh; }
+    h2 { color:#90A955;font-size:2em;margin-top:38px }
+    .container { max-width:700px; margin: 0 auto; padding: 0 4vw; text-align:center;}
+    .download-cards { display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:32px;}
+    .card-app{ background:#fff;color:#132A13;box-shadow:0 2px 12px #28593021;border-radius:14px;padding:24px 18px;max-width:260px;flex:1 1 220px;}
+    .card-app h3{margin:0 0 8px 0;}
+    .card-app a{background:#90A955;color:#132A13;padding:11px 26px;text-decoration:none;font-weight:700;border-radius:7px;font-size:1em;display:inline-block;transition:background .2s;}
+    .card-app a:hover{background:#4f772d;color:#fff;}
+    footer{ background: linear-gradient(135deg, #285930 0%, #90A955 100%); color: #fff; padding:38px 0 0 0; margin-top:40px; text-align:center;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <img src="img/logo.png" alt="Logo Lumiô Lab"/>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="agrolideres.html">AgroLíderes</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="download.html" class="active">Download</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <section id="download" class="section alt">
+      <div class="container">
+        <h2>Aplicativos Lumiô Lab</h2>
+        <p style="max-width: 48ch; margin: 0 auto 32px auto;">
+          Confira as soluções digitais criadas pelo Lumiô Lab para download gratuito. Novos apps serão adicionados aqui!
+        </p>
+        <div class="download-cards">
+          <!-- CARD: App 1 -->
+          <div class="card-app">
+            <h3>Gestão Rural</h3>
+            <p>Controle simplificado de insumos e safras, totalmente offline.</p>
+            <a href="LINK_GESTAO_RURAL.apk" download>Baixar App</a>
+          </div>
+          <!-- CARD: App 2 -->
+          <div class="card-app">
+            <h3>Diagnóstico de Pragas</h3>
+            <p>Identifique pragas pela câmera, mesmo sem internet.</p>
+            <a href="LINK_DIAGNOSTICO_PRAGAS.apk" download>Baixar App</a>
+          </div>
+          <!-- CARD: App 3 -->
+          <div class="card-app">
+            <h3>Calendário Agrícola</h3>
+            <p>Plantio, colheita e manejo das principais culturas, na palma da mão.</p>
+            <a href="LINK_CALENDARIO_AGRICOLA.apk" download>Baixar App</a>
+          </div>
+          <!-- Adicione mais cards conforme novos apps forem lançados -->
+        </div>
+        <p style="font-size:13px;color:#eee;margin-top:26px;">
+          Dúvidas ou problemas para baixar? Fale com <b>assisiagro@gmail.com</b>
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    © <span id="year"></span> Lumiô Lab. Todos os direitos reservados.
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear().toString();
+    </script>
+  </footer>
+</body>
+</html>
